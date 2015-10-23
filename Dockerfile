@@ -13,7 +13,6 @@ RUN apt-get install git && \
     echo "==> [CAUTION] this may take several minutes!!!"  && \
     git clone https://github.com/GlobalNamesArchitecture/gnparser.git app && \
     cd app && \
-    sbt assembly
+    sbt stage
 
-COPY files/start /usr/local/bin/start
-CMD ["start"]
+CMD ["/app/web/target/universal/stage/bin/global-names-parser-web"]
