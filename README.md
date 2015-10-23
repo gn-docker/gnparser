@@ -2,7 +2,7 @@
 
 Docker container for Global Names Parser
 
-Prebuilt image can be found at [dockerhub]
+Prebuilt container image can be found on [dockerhub]
 
 Usage
 -----
