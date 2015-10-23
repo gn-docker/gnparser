@@ -1,6 +1,6 @@
 # gnparser
 
-Docker container for the [Global Names Parser's] web service
+Docker container for the [Global Names Parser's][gnparser] web service
 
 Prebuilt container image can be found on [dockerhub]
 
