@@ -1,6 +1,6 @@
 FROM java:8
 MAINTAINER Dmitry Mozzherin
-
+ENV LAST_FULL_REBUILD 2015-10-26
 ENV SBT_VERSION 0.13.8
 ENV SBT_JAR https://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/sbt-launch/$SBT_VERSION/sbt-launch.jar
 
@@ -15,4 +15,4 @@ RUN apt-get install git && \
     cd app && \
     sbt stage
 
-CMD ["/app/web/target/universal/stage/bin/global-names-parser-web"]
+CMD ["/app/web/target/universal/stage/bin/glnparser-web"]
