@@ -15,4 +15,4 @@ RUN apt-get install git && \
     cd app && \
     sbt stage
 
-CMD ["/app/web/target/universal/stage/bin/glnparser-web"]
+CMD ["/app/web/target/universal/stage/bin/gnparser-web"]
