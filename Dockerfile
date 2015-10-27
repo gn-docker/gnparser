@@ -8,11 +8,11 @@ ENV SBT_JAR https://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/sbt-la
 ADD  $SBT_JAR /usr/local/bin/sbt-launch.jar
 COPY files/sbt /usr/local/bin/sbt
 
-RUN apt-get install git && \
-    echo "==> fetch all sbt jars from Maven repo..."       && \
+RUN echo "==> fetch all sbt jars from Maven repo..."       && \
     echo "==> [CAUTION] this may take several minutes!!!"  && \
-    git clone https://github.com/GlobalNamesArchitecture/gnparser.git app && \
-    cd app && \
-    sbt stage
+    wget https://github.com/GlobalNamesArchitecture/gnparser/archive/master.zip -O gnparser-master.zip && \
+    unzip gnparser-master.zip && \
+    cd gnparser-master && \
+    sbt web/stage
 
-CMD ["/app/web/target/universal/stage/bin/gnparser-web"]
+CMD ["/gnparser-master/web/target/universal/stage/bin/gnparser-web"]
