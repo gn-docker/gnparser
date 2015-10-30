@@ -1,18 +1,20 @@
-FROM java:8
+FROM java:8-jre
 MAINTAINER Dmitry Mozzherin
-ENV LAST_FULL_REBUILD 2015-10-26
-ENV SBT_VERSION 0.13.8
-ENV SBT_JAR https://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/sbt-launch/$SBT_VERSION/sbt-launch.jar
+ENV LAST_FULL_REBUILD 2015-10-30
+ENV GNPARSER_VERSION 0.1.0
 
+ADD https://github.com/GlobalNamesArchitecture/gnparser/releases/download/release-$GNPARSER_VERSION/gnparser-web-$GNPARSER_VERSION.zip /
 
-ADD  $SBT_JAR /usr/local/bin/sbt-launch.jar
-COPY files/sbt /usr/local/bin/sbt
+ADD https://github.com/GlobalNamesArchitecture/gnparser/releases/download/release-$GNPARSER_VERSION/gnparser-$GNPARSER_VERSION.zip /
 
-RUN apt-get install git && \
-    echo "==> fetch all sbt jars from Maven repo..."       && \
-    echo "==> [CAUTION] this may take several minutes!!!"  && \
-    git clone https://github.com/GlobalNamesArchitecture/gnparser.git app && \
-    cd app && \
-    sbt stage
+RUN unzip gnparser-web-$GNPARSER_VERSION.zip && \
+    unzip gnparser-$GNPARSER_VERSION.zip && \
+    rm gnparser-web-$GNPARSER_VERSION.zip && \
+    rm gnparser-$GNPARSER_VERSION.zip && \
+    mv gnparser-web-$GNPARSER_VERSION gnparser-web && \
+    mv gnparser-$GNPARSER_VERSION gnparser
 
-CMD ["/app/web/target/universal/stage/bin/gnparser-web"]
+COPY start.sh /
+
+ENTRYPOINT ["/start.sh"]
+CMD ["web"]
