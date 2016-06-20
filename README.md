@@ -15,17 +15,18 @@ To install/update container
 docker pull gnames/gnparser
 ```
 
-To run web server
-
-```
-docker run -d -p 80:9000 --name gnparser gnames/gnparser
-```
-
 To run socket server
 
 ```
-docker run -d -p 4334:4334 --name gnparser gnames/gnparser socket
+docker run -d -p 0.0.0.0:4334:4334 --name gnparser gnames/gnparser
 ```
+
+To run web server
+
+```
+docker run -d -p 0.0.0.0:80:9000 --name gnparser gnames/gnparser web
+```
+
 
 [dockerhub]: https://hub.docker.com/r/gnames/gnparser/
 [gnparser]: https://github.com/GlobalNamesArchitecture/gnparser
