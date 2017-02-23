@@ -12,4 +12,4 @@ RUN unzip gnparser-$GNPARSER_VERSION.zip && \
 
 
 ENTRYPOINT ["/gnparser/bin/gnparse"]
-CMD ["socket"]
+CMD ["web"]
