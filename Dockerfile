@@ -2,7 +2,7 @@ FROM java:8-jre
 MAINTAINER Dmitry Mozzherin
 ENV LAST_FULL_REBUILD 2015-10-30
 
-ENV GNPARSER_VERSION 0.3.3
+ENV GNPARSER_VERSION 0.4.0
 
 ADD https://github.com/GlobalNamesArchitecture/gnparser/releases/download/release-$GNPARSER_VERSION/gnparser-$GNPARSER_VERSION.zip /
 
