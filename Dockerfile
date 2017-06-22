@@ -1,4 +1,4 @@
-FROM java:8-jre
+FROM openjdk:8-jre
 MAINTAINER Dmitry Mozzherin
 ENV LAST_FULL_REBUILD 2015-10-30
 
