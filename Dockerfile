@@ -11,5 +11,5 @@ RUN unzip gnparser-$GNPARSER_VERSION.zip && \
     mv gnparser-$GNPARSER_VERSION gnparser
 
 
-ENTRYPOINT ["/gnparser/bin/gnparse"]
+ENTRYPOINT ["/gnparser/bin/gnparser"]
 CMD ["web"]

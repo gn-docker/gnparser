@@ -24,7 +24,7 @@ docker run -d -p 0.0.0.0:4334:4334 --name gnparser gnames/gnparser socket
 To run web server
 
 ```
-docker run -d -p 0.0.0.0:80:9000 --name gnparser gnames/gnparser
+docker run -d -p 0.0.0.0:80:4334 --name gnparser gnames/gnparser web
 ```
 
 
