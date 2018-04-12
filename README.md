@@ -9,6 +9,12 @@ Prebuilt container image can be found on [dockerhub]
 Usage
 -----
 
+To build container by hand (from root dir)
+
+```
+docker build --rm -t gnames/gnparser:0.4.4 .
+```
+
 To install/update container
 
 ```
